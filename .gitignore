@@ -1,0 +1,53 @@
+# Always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# Always-ignore directories
+doc/
+tmp/
+node_modules/
+build/
+
+# OS or Editor folders
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+$RECYCLE.BIN/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Thumbnails
+._*
+
+# SVN
+.svn/
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Ruby
+Gemfile.lock
+
+# SublimeText
+*.cache
+Package Control.sublime-settings
+/*.sublime-project
+*.sublime-workspace
+sftp-config*.json
