@@ -10,4 +10,5 @@ group :development do
   gem 'sass'
   gem 'compass'
   gem 'uglifier'
+  gem 'colored'
 end
