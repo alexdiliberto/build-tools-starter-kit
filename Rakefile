@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rake-pipeline'
+require 'jshintrb/jshinttask'
 require 'colored'
 
 
@@ -10,6 +11,7 @@ desc "Build project"
 task :build do
   puts 'Running full build.'.bold.cyan
 
+  Rake::Task["jshint"].invoke
   Rake::Task["basics"].invoke
   Rake::Task["js"].invoke
   Rake::Task["css"].invoke
@@ -45,4 +47,12 @@ task :css do
 
   project = Rake::Pipeline::Project.new('Assetfiles/CSS.rb')
   project.invoke
+end
+
+desc "Run JSHint"
+Jshintrb::JshintTask.new :jshint do |t|
+  t.pattern = 'src/js/**/*.js'
+  t.exclude_pattern = 'src/js/libs/**/*.js'
+  t.options = {:strict => false}
+  t.globals = ["define", "require", "requirejs", "Ember"] #RequireJS, Ember
 end
